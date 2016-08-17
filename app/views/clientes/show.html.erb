@@ -12,7 +12,7 @@
 
 <p>
   <strong>Cidade:</strong>
-  <%= @cliente.cidade %>
+  <%= @cliente.cidade ? @cliente.cidade.nome : nil %>
 </p>
 
 <%= link_to 'Edit', edit_cliente_path(@cliente) %> |
