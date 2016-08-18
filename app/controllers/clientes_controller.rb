@@ -1,5 +1,6 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
+  before_action :set_cidade, only: [:show, :edit, :update, :destroy]
 
   # GET /clientes
   # GET /clientes.json
@@ -67,6 +68,10 @@ class ClientesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cliente
       @cliente = Cliente.find(params[:id])
+    end
+
+    def set_cidade
+      @cidades = Cidade.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
