@@ -1,0 +1,1 @@
+json.partial! "sindicos/sindico", sindico: @sindico

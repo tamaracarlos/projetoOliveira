@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :administradoras
-  resources :administradoras
-  resources :administradoras
+  resources :sindicos
   resources :administradoras
   resources :contratos
   resources :clientes
