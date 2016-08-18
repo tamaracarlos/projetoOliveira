@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :cidade_id %><br>
-    <%= f.collection_select( :cidade_id, Cidade.all, :id, :nome, include_blank: true) %>
+    <%= f.collection_select( :cidade_id, @cidades, :id, :nome, include_blank: true) %>
   </div>
   <div class="actions">
     <%= f.submit %>
