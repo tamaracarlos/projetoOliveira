@@ -3,6 +3,12 @@
 <p>
   <strong>Nome:</strong>
   <%= @cidade.nome %>
+  <hr>
+  <ul>
+	  <% @cidade.clientes.each do |cliente|%>
+	  	<li><%= "#{cliente.nome} - #{cliente.conta}"%></li>	  	
+	  <%end%>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_cidade_path(@cidade) %> |
