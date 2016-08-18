@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818194811) do
+ActiveRecord::Schema.define(version: 20160818205747) do
+
+  create_table "administradoras", force: :cascade do |t|
+    t.string   "nome"
+    t.integer  "telefone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cidades", force: :cascade do |t|
     t.string   "nome"

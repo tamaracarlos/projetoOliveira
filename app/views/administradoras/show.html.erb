@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @administradora.nome %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @administradora.telefone %>
+</p>
+
+<%= link_to 'Edit', edit_administradora_path(@administradora) %> |
+<%= link_to 'Back', administradoras_path %>

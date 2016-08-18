@@ -1,0 +1,1 @@
+json.partial! "administradoras/administradora", administradora: @administradora

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Administradoras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @administradoras.each do |administradora| %>
+      <tr>
+        <td><%= administradora.nome %></td>
+        <td><%= administradora.telefone %></td>
+        <td><%= link_to 'Show', administradora %></td>
+        <td><%= link_to 'Edit', edit_administradora_path(administradora) %></td>
+        <td><%= link_to 'Destroy', administradora, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Administradora', new_administradora_path %>
