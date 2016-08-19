@@ -1,0 +1,29 @@
+<%= form_for(@controlp) do |f| %>
+  <% if @controlp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@controlp.errors.count, "error") %> prohibited this controlp from being saved:</h2>
+
+      <ul>
+      <% @controlp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :horarioArmeDesarme %><br>
+    <%= f.time_select :horarioArmeDesarme %>
+  </div>
+  <div class="field">
+    <%= f.label :horarioInterfone %><br>
+    <%= f.time_select :horarioInterfone %>
+  </div>
+  <div class="field">
+    <%= f.label :tempoArmeAutomatico %><br>
+    <%= f.time_select :tempoArmeAutomatico %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

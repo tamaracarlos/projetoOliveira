@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horarioArmeDesarme: 2016-08-19 11:38:14
+  horarioInterfone: 2016-08-19 11:38:14
+  tempoArmeAutomatico: 2016-08-19 11:38:14
+
+two:
+  horarioArmeDesarme: 2016-08-19 11:38:14
+  horarioInterfone: 2016-08-19 11:38:14
+  tempoArmeAutomatico: 2016-08-19 11:38:14

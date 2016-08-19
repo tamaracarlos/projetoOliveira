@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Controlps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Horarioarmedesarme</th>
+      <th>Horariointerfone</th>
+      <th>Tempoarmeautomatico</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @controlps.each do |controlp| %>
+      <tr>
+        <td><%= controlp.horarioArmeDesarme %></td>
+        <td><%= controlp.horarioInterfone %></td>
+        <td><%= controlp.tempoArmeAutomatico %></td>
+        <td><%= link_to 'Show', controlp %></td>
+        <td><%= link_to 'Edit', edit_controlp_path(controlp) %></td>
+        <td><%= link_to 'Destroy', controlp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Controlp', new_controlp_path %>

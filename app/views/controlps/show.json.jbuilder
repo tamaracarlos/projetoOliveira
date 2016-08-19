@@ -1,0 +1,1 @@
+json.partial! "controlps/controlp", controlp: @controlp
