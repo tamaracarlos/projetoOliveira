@@ -1,0 +1,1 @@
+json.partial! "hds/hd", hd: @hd

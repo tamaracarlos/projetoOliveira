@@ -1,0 +1,1 @@
+json.array! @hds, partial: 'hds/hd', as: :hd

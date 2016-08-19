@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Capacidade:</strong>
+  <%= @hd.capacidade %>
+</p>
+
+<p>
+  <strong>Tempo de gravacao:</strong>
+  <%= @hd.tempo_de_gravacao %>
+</p>
+
+<%= link_to 'Edit', edit_hd_path(@hd) %> |
+<%= link_to 'Back', hds_path %>

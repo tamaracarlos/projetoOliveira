@@ -18,7 +18,7 @@ class CamerasControllerTest < ActionController::TestCase
 
   test "should create camera" do
     assert_difference('Camera.count') do
-      post :create, camera: { localizacao: @camera.localizacao, marca: @camera.marca, modelo: @camera.modelo, quantidade: @camera.quantidade }
+      post :create, camera: { localizacao: @camera.localizacao, marcas: @camera.marcas, modelos: @camera.modelos, quantidade: @camera.quantidade }
     end
 
     assert_redirected_to camera_path(assigns(:camera))
@@ -35,7 +35,7 @@ class CamerasControllerTest < ActionController::TestCase
   end
 
   test "should update camera" do
-    patch :update, id: @camera, camera: { localizacao: @camera.localizacao, marca: @camera.marca, modelo: @camera.modelo, quantidade: @camera.quantidade }
+    patch :update, id: @camera, camera: { localizacao: @camera.localizacao, marcas: @camera.marcas, modelos: @camera.modelos, quantidade: @camera.quantidade }
     assert_redirected_to camera_path(assigns(:camera))
   end
 

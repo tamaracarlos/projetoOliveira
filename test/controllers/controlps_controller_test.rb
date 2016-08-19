@@ -18,7 +18,7 @@ class ControlpsControllerTest < ActionController::TestCase
 
   test "should create controlp" do
     assert_difference('Controlp.count') do
-      post :create, controlp: { horarioArmeDesarme: @controlp.horarioArmeDesarme, horarioInterfone: @controlp.horarioInterfone, tempoArmeAutomatico: @controlp.tempoArmeAutomatico }
+      post :create, controlp: { horario_arme_desarme: @controlp.horario_arme_desarme, horario_interfone: @controlp.horario_interfone, tempo_arme_automatico: @controlp.tempo_arme_automatico }
     end
 
     assert_redirected_to controlp_path(assigns(:controlp))
@@ -35,7 +35,7 @@ class ControlpsControllerTest < ActionController::TestCase
   end
 
   test "should update controlp" do
-    patch :update, id: @controlp, controlp: { horarioArmeDesarme: @controlp.horarioArmeDesarme, horarioInterfone: @controlp.horarioInterfone, tempoArmeAutomatico: @controlp.tempoArmeAutomatico }
+    patch :update, id: @controlp, controlp: { horario_arme_desarme: @controlp.horario_arme_desarme, horario_interfone: @controlp.horario_interfone, tempo_arme_automatico: @controlp.tempo_arme_automatico }
     assert_redirected_to controlp_path(assigns(:controlp))
   end
 

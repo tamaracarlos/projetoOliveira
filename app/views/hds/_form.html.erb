@@ -1,0 +1,25 @@
+<%= form_for(@hd) do |f| %>
+  <% if @hd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hd.errors.count, "error") %> prohibited this hd from being saved:</h2>
+
+      <ul>
+      <% @hd.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :capacidade %><br>
+    <%= f.text_field :capacidade %>
+  </div>
+  <div class="field">
+    <%= f.label :tempo_de_gravacao %><br>
+    <%= f.text_field :tempo_de_gravacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

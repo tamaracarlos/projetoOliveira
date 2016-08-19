@@ -1,0 +1,1 @@
+json.partial! "sensores/sensore", sensore: @sensore

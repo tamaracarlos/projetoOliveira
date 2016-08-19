@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Hds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Capacidade</th>
+      <th>Tempo de gravacao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hds.each do |hd| %>
+      <tr>
+        <td><%= hd.capacidade %></td>
+        <td><%= hd.tempo_de_gravacao %></td>
+        <td><%= link_to 'Show', hd %></td>
+        <td><%= link_to 'Edit', edit_hd_path(hd) %></td>
+        <td><%= link_to 'Destroy', hd, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hd', new_hd_path %>

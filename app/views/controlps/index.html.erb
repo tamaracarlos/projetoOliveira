@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Horarioarmedesarme</th>
-      <th>Horariointerfone</th>
-      <th>Tempoarmeautomatico</th>
+      <th>Horario arme desarme</th>
+      <th>Horario interfone</th>
+      <th>Tempo arme automatico</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +15,9 @@
   <tbody>
     <% @controlps.each do |controlp| %>
       <tr>
-        <td><%= controlp.horarioArmeDesarme %></td>
-        <td><%= controlp.horarioInterfone %></td>
-        <td><%= controlp.tempoArmeAutomatico %></td>
+        <td><%= controlp.horario_arme_desarme %></td>
+        <td><%= controlp.horario_interfone %></td>
+        <td><%= controlp.tempo_arme_automatico %></td>
         <td><%= link_to 'Show', controlp %></td>
         <td><%= link_to 'Edit', edit_controlp_path(controlp) %></td>
         <td><%= link_to 'Destroy', controlp, method: :delete, data: { confirm: 'Are you sure?' } %></td>

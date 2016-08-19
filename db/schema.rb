@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819150521) do
+ActiveRecord::Schema.define(version: 20160819173857) do
 
   create_table "administradoras", force: :cascade do |t|
     t.string   "nome"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20160819150521) do
   end
 
   create_table "cameras", force: :cascade do |t|
-    t.string   "modelo"
-    t.string   "marca"
+    t.string   "modelos"
+    t.string   "marcas"
     t.integer  "quantidade"
     t.string   "localizacao"
     t.datetime "created_at",  null: false
@@ -59,11 +59,11 @@ ActiveRecord::Schema.define(version: 20160819150521) do
   end
 
   create_table "controlps", force: :cascade do |t|
-    t.time     "horarioArmeDesarme"
-    t.time     "horarioInterfone"
-    t.time     "tempoArmeAutomatico"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.time     "horario_arme_desarme"
+    t.time     "horario_interfone"
+    t.time     "tempo_arme_automatico"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "dvrs", force: :cascade do |t|
@@ -77,10 +77,10 @@ ActiveRecord::Schema.define(version: 20160819150521) do
   end
 
   create_table "hds", force: :cascade do |t|
-    t.integer  "capacidade"
-    t.integer  "tempoGravacao"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "capacidade"
+    t.string   "tempo_de_gravacao"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "internets", force: :cascade do |t|
@@ -91,9 +91,9 @@ ActiveRecord::Schema.define(version: 20160819150521) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "sensors", force: :cascade do |t|
-    t.string   "modelo"
-    t.string   "marca"
+  create_table "sensores", force: :cascade do |t|
+    t.string   "modelos"
+    t.string   "marcas"
     t.integer  "quantidade"
     t.string   "localizacao"
     t.datetime "created_at",  null: false

@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  horarioArmeDesarme: 2016-08-19 11:38:14
-  horarioInterfone: 2016-08-19 11:38:14
-  tempoArmeAutomatico: 2016-08-19 11:38:14
+  horario_arme_desarme: 2016-08-19 14:20:47
+  horario_interfone: 2016-08-19 14:20:47
+  tempo_arme_automatico: 2016-08-19 14:20:47
 
 two:
-  horarioArmeDesarme: 2016-08-19 11:38:14
-  horarioInterfone: 2016-08-19 11:38:14
-  tempoArmeAutomatico: 2016-08-19 11:38:14
+  horario_arme_desarme: 2016-08-19 14:20:47
+  horario_interfone: 2016-08-19 14:20:47
+  tempo_arme_automatico: 2016-08-19 14:20:47

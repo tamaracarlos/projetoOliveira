@@ -1,11 +1,12 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do
   resources :cameras
-  resources :sensors
+  resources :sensores
   resources :teclados
   resources :central_de_alarmes
   resources :controlps
   resources :internets
   resources :dvrs
+  resources :hds
   resources :sindicos
   resources :administradoras
   resources :contratos
