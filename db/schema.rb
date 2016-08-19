@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818210342) do
+ActiveRecord::Schema.define(version: 20160819143421) do
 
   create_table "administradoras", force: :cascade do |t|
     t.string   "nome"
@@ -39,6 +39,31 @@ ActiveRecord::Schema.define(version: 20160818210342) do
   create_table "contratos", force: :cascade do |t|
     t.string   "tipo"
     t.date     "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dvrs", force: :cascade do |t|
+    t.string   "modelo"
+    t.integer  "canais"
+    t.integer  "cameras"
+    t.integer  "entradas"
+    t.integer  "saidas"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hds", force: :cascade do |t|
+    t.integer  "capacidade"
+    t.integer  "tempoGravacao"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "internets", force: :cascade do |t|
+    t.string   "banda"
+    t.string   "contrato"
+    t.integer  "cnpj"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

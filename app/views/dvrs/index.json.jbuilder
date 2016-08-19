@@ -1,0 +1,1 @@
+json.array! @dvrs, partial: 'dvrs/dvr', as: :dvr

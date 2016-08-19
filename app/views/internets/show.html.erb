@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Banda:</strong>
+  <%= @internet.banda %>
+</p>
+
+<p>
+  <strong>Contrato:</strong>
+  <%= @internet.contrato %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @internet.cnpj %>
+</p>
+
+<%= link_to 'Edit', edit_internet_path(@internet) %> |
+<%= link_to 'Back', internets_path %>

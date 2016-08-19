@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @dvr.modelo %>
+</p>
+
+<p>
+  <strong>Canais:</strong>
+  <%= @dvr.canais %>
+</p>
+
+<p>
+  <strong>Cameras:</strong>
+  <%= @dvr.cameras %>
+</p>
+
+<p>
+  <strong>Entradas:</strong>
+  <%= @dvr.entradas %>
+</p>
+
+<p>
+  <strong>Saidas:</strong>
+  <%= @dvr.saidas %>
+</p>
+
+<%= link_to 'Edit', edit_dvr_path(@dvr) %> |
+<%= link_to 'Back', dvrs_path %>

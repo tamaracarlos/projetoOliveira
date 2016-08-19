@@ -1,0 +1,29 @@
+<%= form_for(@internet) do |f| %>
+  <% if @internet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@internet.errors.count, "error") %> prohibited this internet from being saved:</h2>
+
+      <ul>
+      <% @internet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :banda %><br>
+    <%= f.text_field :banda %>
+  </div>
+  <div class="field">
+    <%= f.label :contrato %><br>
+    <%= f.text_field :contrato %>
+  </div>
+  <div class="field">
+    <%= f.label :cnpj %><br>
+    <%= f.number_field :cnpj %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

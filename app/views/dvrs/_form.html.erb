@@ -1,0 +1,37 @@
+<%= form_for(@dvr) do |f| %>
+  <% if @dvr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dvr.errors.count, "error") %> prohibited this dvr from being saved:</h2>
+
+      <ul>
+      <% @dvr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :modelo %><br>
+    <%= f.text_field :modelo %>
+  </div>
+  <div class="field">
+    <%= f.label :canais %><br>
+    <%= f.number_field :canais %>
+  </div>
+  <div class="field">
+    <%= f.label :cameras %><br>
+    <%= f.number_field :cameras %>
+  </div>
+  <div class="field">
+    <%= f.label :entradas %><br>
+    <%= f.number_field :entradas %>
+  </div>
+  <div class="field">
+    <%= f.label :saidas %><br>
+    <%= f.number_field :saidas %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

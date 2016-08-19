@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  banda: MyString
+  contrato: MyString
+  cnpj: 1
+
+two:
+  banda: MyString
+  contrato: MyString
+  cnpj: 1

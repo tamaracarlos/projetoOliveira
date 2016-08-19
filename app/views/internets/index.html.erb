@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Internets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Banda</th>
+      <th>Contrato</th>
+      <th>Cnpj</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @internets.each do |internet| %>
+      <tr>
+        <td><%= internet.banda %></td>
+        <td><%= internet.contrato %></td>
+        <td><%= internet.cnpj %></td>
+        <td><%= link_to 'Show', internet %></td>
+        <td><%= link_to 'Edit', edit_internet_path(internet) %></td>
+        <td><%= link_to 'Destroy', internet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Internet', new_internet_path %>

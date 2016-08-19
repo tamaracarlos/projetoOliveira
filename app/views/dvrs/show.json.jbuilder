@@ -1,0 +1,1 @@
+json.partial! "dvrs/dvr", dvr: @dvr

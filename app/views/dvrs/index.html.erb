@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dvrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>Canais</th>
+      <th>Cameras</th>
+      <th>Entradas</th>
+      <th>Saidas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dvrs.each do |dvr| %>
+      <tr>
+        <td><%= dvr.modelo %></td>
+        <td><%= dvr.canais %></td>
+        <td><%= dvr.cameras %></td>
+        <td><%= dvr.entradas %></td>
+        <td><%= dvr.saidas %></td>
+        <td><%= link_to 'Show', dvr %></td>
+        <td><%= link_to 'Edit', edit_dvr_path(dvr) %></td>
+        <td><%= link_to 'Destroy', dvr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dvr', new_dvr_path %>

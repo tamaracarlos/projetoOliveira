@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  modelo: MyString
+  canais: 1
+  cameras: 1
+  entradas: 1
+  saidas: 1
+
+two:
+  modelo: MyString
+  canais: 1
+  cameras: 1
+  entradas: 1
+  saidas: 1
