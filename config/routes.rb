@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+  resources :sensors
   resources :teclados
   resources :central_de_alarmes
   resources :controlps
