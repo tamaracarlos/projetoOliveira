@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819145109) do
+ActiveRecord::Schema.define(version: 20160819145351) do
 
   create_table "administradoras", force: :cascade do |t|
     t.string   "nome"
@@ -85,6 +85,13 @@ ActiveRecord::Schema.define(version: 20160819145109) do
   create_table "sindicos", force: :cascade do |t|
     t.string   "nome"
     t.integer  "telefone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teclados", force: :cascade do |t|
+    t.string   "tipo"
+    t.integer  "quantidade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

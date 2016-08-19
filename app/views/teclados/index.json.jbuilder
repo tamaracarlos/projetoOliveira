@@ -1,0 +1,1 @@
+json.array! @teclados, partial: 'teclados/teclado', as: :teclado

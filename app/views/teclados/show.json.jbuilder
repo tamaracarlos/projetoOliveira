@@ -1,0 +1,1 @@
+json.partial! "teclados/teclado", teclado: @teclado

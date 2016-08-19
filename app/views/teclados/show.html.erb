@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @teclado.tipo %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @teclado.quantidade %>
+</p>
+
+<%= link_to 'Edit', edit_teclado_path(@teclado) %> |
+<%= link_to 'Back', teclados_path %>
