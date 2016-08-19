@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+  resources :central_de_alarmes
   resources :controlps
   resources :internets
   resources :dvrs

@@ -1,0 +1,1 @@
+json.array! @central_de_alarmes, partial: 'central_de_alarmes/central_de_alarme', as: :central_de_alarme
