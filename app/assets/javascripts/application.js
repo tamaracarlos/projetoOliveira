@@ -12,6 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
 //= require bootstrap_sb_admin_base_v2 
+
+//= require jquery
+//= require jquery_ujs
+//= require twitter/bootstrap/transition
+//= require twitter/bootstrap/alert
+//= require twitter/bootstrap/modal
+//= require twitter/bootstrap/button
+//= require twitter/bootstrap/collapse
