@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:conta) %>:</strong></dt>
   <dd><%= @cliente.conta %></dd>
   <dt><strong><%= model_class.human_attribute_name(:cidade_id) %>:</strong></dt>
-  <dd><%= @cliente.cidade_id %></dd>
+  <dd><%= @cliente.cidade.nome %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

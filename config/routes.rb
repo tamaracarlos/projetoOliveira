@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :nobreaks
   resources :funcionarios
   resources :turnos
   resources :cameras

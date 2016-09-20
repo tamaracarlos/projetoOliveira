@@ -1,27 +1,27 @@
-<%- model_class = Cliente -%>
+<%- model_class = Nobreak -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:nome) %></th>
-      <th><%= model_class.human_attribute_name(:conta) %></th>
-      <th><%= model_class.human_attribute_name(:cidade_id) %></th>      
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:capacidade) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @clientes.each do |cliente| %>
+    <% @nobreaks.each do |nobreak| %>
       <tr>
-        <td><%= link_to cliente.nome, cliente_path(cliente) %></td>        
-        <td><%= cliente.conta %></td>
-        <td><%= cliente.cidade.nome %></td>        
+        <td><%= link_to nobreak.id, nobreak_path(nobreak) %></td>
+        <td><%= nobreak.capacidade %></td>
+        <td><%=l nobreak.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_cliente_path(cliente), :class => 'btn btn-default btn-xs' %>
+                      edit_nobreak_path(nobreak), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      cliente_path(cliente),
+                      nobreak_path(nobreak),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -32,5 +32,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_cliente_path,
+            new_nobreak_path,
             :class => 'btn btn-primary' %>

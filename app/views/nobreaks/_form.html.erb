@@ -1,0 +1,34 @@
+<%= form_for @nobreak, :html => { :class => "form-horizontal nobreak" } do |f| %>
+
+  <% if @nobreak.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@nobreak.errors.count, "error") %> prohibited this nobreak from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @nobreak.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :capacidade, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :capacidade, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:capacidade) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                nobreaks_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
