@@ -1,29 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Hds</h1>
-
-<table>
+<%- model_class = Hd -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Capacidade</th>
-      <th>Tempo de gravacao</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:capacidade) %></th>
+      <th><%= model_class.human_attribute_name(:tempo_de_gravacao) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @hds.each do |hd| %>
       <tr>
+        <td><%= link_to hd.id, hd_path(hd) %></td>
         <td><%= hd.capacidade %></td>
         <td><%= hd.tempo_de_gravacao %></td>
-        <td><%= link_to 'Show', hd %></td>
-        <td><%= link_to 'Edit', edit_hd_path(hd) %></td>
-        <td><%= link_to 'Destroy', hd, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l hd.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_hd_path(hd), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      hd_path(hd),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Hd', new_hd_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_hd_path,
+            :class => 'btn btn-primary' %>

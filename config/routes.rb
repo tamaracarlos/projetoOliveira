@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :funcionarios
+  resources :turnos
   resources :cameras
   resources :sensores
   resources :teclados

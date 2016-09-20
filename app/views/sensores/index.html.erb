@@ -1,33 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Sensores</h1>
-
-<table>
+<%- model_class = Sensore -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Modelos</th>
-      <th>Marcas</th>
-      <th>Quantidade</th>
-      <th>Localizacao</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:modelos) %></th>
+      <th><%= model_class.human_attribute_name(:marcas) %></th>
+      <th><%= model_class.human_attribute_name(:quantidade) %></th>
+      <th><%= model_class.human_attribute_name(:localizacao) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @sensores.each do |sensore| %>
       <tr>
+        <td><%= link_to sensore.id, sensore_path(sensore) %></td>
         <td><%= sensore.modelos %></td>
         <td><%= sensore.marcas %></td>
         <td><%= sensore.quantidade %></td>
         <td><%= sensore.localizacao %></td>
-        <td><%= link_to 'Show', sensore %></td>
-        <td><%= link_to 'Edit', edit_sensore_path(sensore) %></td>
-        <td><%= link_to 'Destroy', sensore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l sensore.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_sensore_path(sensore), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      sensore_path(sensore),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Sensore', new_sensore_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_sensore_path,
+            :class => 'btn btn-primary' %>

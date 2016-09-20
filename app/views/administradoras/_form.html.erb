@@ -1,25 +1,41 @@
-<%= form_for(@administradora) do |f| %>
-  <% if @administradora.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@administradora.errors.count, "error") %> prohibited this administradora from being saved:</h2>
+<%= form_for @administradora, :html => { :class => "form-horizontal administradora" } do |f| %>
 
-      <ul>
-      <% @administradora.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @administradora.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@administradora.errors.count, "error") %> prohibited this administradora from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @administradora.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+  <div class="form-group">
+    <%= f.label :nome, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nome) %>
   </div>
-  <div class="field">
-    <%= f.label :telefone %><br>
-    <%= f.number_field :telefone %>
+  <div class="form-group">
+    <%= f.label :telefone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :telefone, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:telefone) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                administradoras_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>

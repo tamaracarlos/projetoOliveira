@@ -1,29 +1,48 @@
-<%= form_for(@internet) do |f| %>
-  <% if @internet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@internet.errors.count, "error") %> prohibited this internet from being saved:</h2>
+<%= form_for @internet, :html => { :class => "form-horizontal internet" } do |f| %>
 
-      <ul>
-      <% @internet.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @internet.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@internet.errors.count, "error") %> prohibited this internet from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @internet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :banda %><br>
-    <%= f.text_field :banda %>
+  <div class="form-group">
+    <%= f.label :banda, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :banda, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:banda) %>
   </div>
-  <div class="field">
-    <%= f.label :contrato %><br>
-    <%= f.text_field :contrato %>
+  <div class="form-group">
+    <%= f.label :contrato, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :contrato, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:contrato) %>
   </div>
-  <div class="field">
-    <%= f.label :cnpj %><br>
-    <%= f.number_field :cnpj %>
+  <div class="form-group">
+    <%= f.label :cnpj, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :cnpj, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cnpj) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                internets_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>

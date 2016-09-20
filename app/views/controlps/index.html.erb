@@ -1,31 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Controlps</h1>
-
-<table>
+<%- model_class = Controlp -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Horario arme desarme</th>
-      <th>Horario interfone</th>
-      <th>Tempo arme automatico</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:arme) %></th>
+      <th><%= model_class.human_attribute_name(:desarme) %></th>
+      <th><%= model_class.human_attribute_name(:interfone) %></th>
+      <th><%= model_class.human_attribute_name(:arme_automatico) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @controlps.each do |controlp| %>
       <tr>
+        <td><%= link_to controlp.id, controlp_path(controlp) %></td>
+        <td><%= controlp.horario_arme_desarme %></td>
         <td><%= controlp.horario_arme_desarme %></td>
         <td><%= controlp.horario_interfone %></td>
         <td><%= controlp.tempo_arme_automatico %></td>
-        <td><%= link_to 'Show', controlp %></td>
-        <td><%= link_to 'Edit', edit_controlp_path(controlp) %></td>
-        <td><%= link_to 'Destroy', controlp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l controlp.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_controlp_path(controlp), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      controlp_path(controlp),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Controlp', new_controlp_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_controlp_path,
+            :class => 'btn btn-primary' %>

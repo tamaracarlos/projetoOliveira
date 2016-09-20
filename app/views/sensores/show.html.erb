@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Sensore -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Modelos:</strong>
-  <%= @sensore.modelos %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:modelos) %>:</strong></dt>
+  <dd><%= @sensore.modelos %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:marcas) %>:</strong></dt>
+  <dd><%= @sensore.marcas %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:quantidade) %>:</strong></dt>
+  <dd><%= @sensore.quantidade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:localizacao) %>:</strong></dt>
+  <dd><%= @sensore.localizacao %></dd>
+</dl>
 
-<p>
-  <strong>Marcas:</strong>
-  <%= @sensore.marcas %>
-</p>
-
-<p>
-  <strong>Quantidade:</strong>
-  <%= @sensore.quantidade %>
-</p>
-
-<p>
-  <strong>Localizacao:</strong>
-  <%= @sensore.localizacao %>
-</p>
-
-<%= link_to 'Edit', edit_sensore_path(@sensore) %> |
-<%= link_to 'Back', sensores_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              sensores_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_sensore_path(@sensore), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              sensore_path(@sensore),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

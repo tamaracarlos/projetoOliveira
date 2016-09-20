@@ -1,29 +1,55 @@
-<%= form_for(@controlp) do |f| %>
-  <% if @controlp.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@controlp.errors.count, "error") %> prohibited this controlp from being saved:</h2>
+<%= form_for @controlp, :html => { :class => "form-horizontal controlp" } do |f| %>
 
-      <ul>
-      <% @controlp.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @controlp.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@controlp.errors.count, "error") %> prohibited this controlp from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @controlp.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :horario_arme_desarme %><br>
-    <%= f.time_select :horario_arme_desarme %>
+  <div class="form-group">
+    <%= f.label :arme, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.time_select :horario_arme_desarme, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:horario_arme_desarme) %>
   </div>
-  <div class="field">
-    <%= f.label :horario_interfone %><br>
-    <%= f.time_select :horario_interfone %>
+  <div class="form-group">
+    <%= f.label :desarme, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.time_select :horario_arme_desarme, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:horario_arme_desarme) %>
   </div>
-  <div class="field">
-    <%= f.label :tempo_arme_automatico %><br>
-    <%= f.time_select :tempo_arme_automatico %>
+  <div class="form-group">
+    <%= f.label :interfone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.time_select :horario_interfone, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:horario_interfone) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :arme_automatico, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.time_select :tempo_arme_automatico, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tempo_arme_automatico) %>
   </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                controlps_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
 <% end %>

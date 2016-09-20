@@ -1,14 +1,21 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Hd -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Capacidade:</strong>
-  <%= @hd.capacidade %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:capacidade) %>:</strong></dt>
+  <dd><%= @hd.capacidade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tempo_de_gravacao) %>:</strong></dt>
+  <dd><%= @hd.tempo_de_gravacao %></dd>
+</dl>
 
-<p>
-  <strong>Tempo de gravacao:</strong>
-  <%= @hd.tempo_de_gravacao %>
-</p>
-
-<%= link_to 'Edit', edit_hd_path(@hd) %> |
-<%= link_to 'Back', hds_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              hds_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_hd_path(@hd), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              hd_path(@hd),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

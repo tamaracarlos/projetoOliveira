@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  turno_id: 
+  email: MyString
+  telefone: MyString
+  admissao: 2016-09-20
+  experiencia: 2016-09-20
+  situacao: 1
+
+two:
+  nome: MyString
+  turno_id: 
+  email: MyString
+  telefone: MyString
+  admissao: 2016-09-20
+  experiencia: 2016-09-20
+  situacao: 1

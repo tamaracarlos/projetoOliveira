@@ -1,33 +1,55 @@
-<%= form_for(@sensore) do |f| %>
-  <% if @sensore.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@sensore.errors.count, "error") %> prohibited this sensore from being saved:</h2>
+<%= form_for @sensore, :html => { :class => "form-horizontal sensore" } do |f| %>
 
-      <ul>
-      <% @sensore.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @sensore.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@sensore.errors.count, "error") %> prohibited this sensore from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @sensore.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :modelos %><br>
-    <%= f.text_field :modelos %>
+  <div class="form-group">
+    <%= f.label :modelos, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :modelos, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:modelos) %>
   </div>
-  <div class="field">
-    <%= f.label :marcas %><br>
-    <%= f.text_field :marcas %>
+  <div class="form-group">
+    <%= f.label :marcas, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :marcas, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:marcas) %>
   </div>
-  <div class="field">
-    <%= f.label :quantidade %><br>
-    <%= f.number_field :quantidade %>
+  <div class="form-group">
+    <%= f.label :quantidade, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :quantidade, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:quantidade) %>
   </div>
-  <div class="field">
-    <%= f.label :localizacao %><br>
-    <%= f.text_field :localizacao %>
+  <div class="form-group">
+    <%= f.label :localizacao, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :localizacao, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:localizacao) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                sensores_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>

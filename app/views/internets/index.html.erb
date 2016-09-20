@@ -1,31 +1,40 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Internets</h1>
-
-<table>
+<%- model_class = Internet -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Banda</th>
-      <th>Contrato</th>
-      <th>Cnpj</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:banda) %></th>
+      <th><%= model_class.human_attribute_name(:contrato) %></th>
+      <th><%= model_class.human_attribute_name(:cnpj) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @internets.each do |internet| %>
       <tr>
+        <td><%= link_to internet.id, internet_path(internet) %></td>
         <td><%= internet.banda %></td>
         <td><%= internet.contrato %></td>
         <td><%= internet.cnpj %></td>
-        <td><%= link_to 'Show', internet %></td>
-        <td><%= link_to 'Edit', edit_internet_path(internet) %></td>
-        <td><%= link_to 'Destroy', internet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l internet.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_internet_path(internet), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      internet_path(internet),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Internet', new_internet_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_internet_path,
+            :class => 'btn btn-primary' %>

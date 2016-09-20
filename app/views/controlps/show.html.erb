@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Controlp -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Horario arme desarme:</strong>
-  <%= @controlp.horario_arme_desarme %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:arme) %>:</strong></dt>
+  <dd><%= @controlp.horario_arme_desarme %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:desarme) %>:</strong></dt>
+  <dd><%= @controlp.horario_arme_desarme %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:interfone) %>:</strong></dt>
+  <dd><%= @controlp.horario_interfone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:arme_automatico) %>:</strong></dt>
+  <dd><%= @controlp.tempo_arme_automatico %></dd>
+</dl>
 
-<p>
-  <strong>Horario interfone:</strong>
-  <%= @controlp.horario_interfone %>
-</p>
-
-<p>
-  <strong>Tempo arme automatico:</strong>
-  <%= @controlp.tempo_arme_automatico %>
-</p>
-
-<%= link_to 'Edit', edit_controlp_path(@controlp) %> |
-<%= link_to 'Back', controlps_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              controlps_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_controlp_path(@controlp), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              controlp_path(@controlp),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819173857) do
+ActiveRecord::Schema.define(version: 20160920151847) do
 
   create_table "administradoras", force: :cascade do |t|
     t.string   "nome"
@@ -76,6 +76,20 @@ ActiveRecord::Schema.define(version: 20160819173857) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "funcionarios", force: :cascade do |t|
+    t.string   "nome"
+    t.integer  "turno_id"
+    t.string   "email"
+    t.string   "telefone"
+    t.date     "admissao"
+    t.date     "experiencia"
+    t.integer  "situacao"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "funcionarios", ["turno_id"], name: "index_funcionarios_on_turno_id"
+
   create_table "hds", force: :cascade do |t|
     t.string   "capacidade"
     t.string   "tempo_de_gravacao"
@@ -110,6 +124,12 @@ ActiveRecord::Schema.define(version: 20160819173857) do
   create_table "teclados", force: :cascade do |t|
     t.string   "tipo"
     t.integer  "quantidade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "turnos", force: :cascade do |t|
+    t.time     "hora"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
