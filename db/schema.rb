@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920151847) do
+ActiveRecord::Schema.define(version: 20160920184134) do
 
   create_table "administradoras", force: :cascade do |t|
     t.string   "nome"
@@ -59,11 +59,12 @@ ActiveRecord::Schema.define(version: 20160920151847) do
   end
 
   create_table "controlps", force: :cascade do |t|
-    t.time     "horario_arme_desarme"
     t.time     "horario_interfone"
     t.time     "tempo_arme_automatico"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.time     "desarme"
+    t.time     "arme"
   end
 
   create_table "dvrs", force: :cascade do |t|

@@ -5,24 +5,20 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:arme) %></th>
       <th><%= model_class.human_attribute_name(:desarme) %></th>
       <th><%= model_class.human_attribute_name(:interfone) %></th>
       <th><%= model_class.human_attribute_name(:arme_automatico) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @controlps.each do |controlp| %>
       <tr>
-        <td><%= link_to controlp.id, controlp_path(controlp) %></td>
-        <td><%= controlp.horario_arme_desarme %></td>
-        <td><%= controlp.horario_arme_desarme %></td>
+        <td><%= controlp.arme %></td>
+        <td><%= controlp.desarme %></td>
         <td><%= controlp.horario_interfone %></td>
         <td><%= controlp.tempo_arme_automatico %></td>
-        <td><%=l controlp.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_controlp_path(controlp), :class => 'btn btn-default btn-xs' %>

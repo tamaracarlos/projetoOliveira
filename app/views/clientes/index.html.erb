@@ -5,22 +5,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:conta) %></th>
-      <th><%= model_class.human_attribute_name(:cidade_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:cidade_id) %></th>      
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @clientes.each do |cliente| %>
       <tr>
-        <td><%= link_to cliente.id, cliente_path(cliente) %></td>
-        <td><%= cliente.nome %></td>
+        <td><%= link_to cliente.nome, cliente_path(cliente) %></td>        
         <td><%= cliente.conta %></td>
-        <td><%= cliente.cidade_id %></td>
-        <td><%=l cliente.created_at %></td>
+        <td><%= cliente.cidade_id %></td>        
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_cliente_path(cliente), :class => 'btn btn-default btn-xs' %>

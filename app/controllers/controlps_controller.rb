@@ -69,6 +69,6 @@ class ControlpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def controlp_params
-      params.require(:controlp).permit(:horario_arme_desarme, :horario_interfone, :tempo_arme_automatico)
+      params.require(:controlp).permit(:arme, :desarme, :horario_interfone, :tempo_arme_automatico)
     end
 end
