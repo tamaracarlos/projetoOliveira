@@ -69,6 +69,6 @@ class NobreaksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nobreak_params
-      params.require(:nobreak).permit(:capacidade)
+      params.require(:nobreak).permit(:capacidade, :marca, :modelo, :bateria, :capacidadeBateria)
     end
 end

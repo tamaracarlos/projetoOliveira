@@ -14,6 +14,13 @@
       </div>
     </div>
   <% end %>
+   <div class="form-group">
+    <%= f.label :nome, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nome) %>
+  </div>
 
   <div class="form-group">
     <%= f.label :banda, :class => 'control-label col-lg-2' %>

@@ -1,31 +1,25 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
-  before_action :set_cidade, only: [:show, :edit, :update, :destroy]
+  before_action :set_cidade, only: [:show, :edit, :update, :destroy, :new]
+  before_action :set_administradora, only: [:show, :edit, :update, :destroy, :new]
+  before_action :set_contrato, only: [:show, :edit, :update, :destroy, :new]
+  before_action :set_dvr, only: [:show, :edit, :update, :destroy, :new]
+  before_action :set_internet, only: [:show, :edit, :update, :destroy, :new]
 
-  # GET /clientes
-  # GET /clientes.json
   def index
     @clientes = Cliente.all
   end
 
-  # GET /clientes/1
-  # GET /clientes/1.json
   def show
   end
 
-  # GET /clientes/new
   def new
-    @cliente = Cliente.new
-    @cidades = Cidade.all
+    @cliente = Cliente.new  
   end
 
-  # GET /clientes/1/edit
-  def edit
-    @cidades = Cidade.all
+  def edit    
   end
 
-  # POST /clientes
-  # POST /clientes.json
   def create
     @cliente = Cliente.new(cliente_params)
 
@@ -40,8 +34,6 @@ class ClientesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /clientes/1
-  # PATCH/PUT /clientes/1.json
   def update
     respond_to do |format|
       if @cliente.update(cliente_params)
@@ -54,8 +46,6 @@ class ClientesController < ApplicationController
     end
   end
 
-  # DELETE /clientes/1
-  # DELETE /clientes/1.json
   def destroy
     @cliente.destroy
     respond_to do |format|
@@ -65,7 +55,6 @@ class ClientesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_cliente
       @cliente = Cliente.find(params[:id])
     end
@@ -74,8 +63,25 @@ class ClientesController < ApplicationController
       @cidades = Cidade.all
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_administradora
+      @administradoras = Administradora.all
+    end
+
+    def set_contrato
+      @contratos = Contrato.all
+    end
+
+    def set_dvr
+      @dvrs = Dvr.all
+    end
+
+    def set_internet
+      @internets = Internet.all
+    end
+
     def cliente_params
-      params.require(:cliente).permit(:nome, :conta, :cidade_id)
+      params.require(:cliente).permit(:nome, :cnpj, :conta, :sindico, :telefone,
+                                      :cidade_id, :administradora_id, :contrato_id, :dvr_id, :internet_id)
+    
     end
 end

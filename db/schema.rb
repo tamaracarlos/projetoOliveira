@@ -1,19 +1,6 @@
-# encoding: UTF-8
-# This file is auto-generated from the current state of the database. Instead
-# of editing this file, please use the migrations feature of Active Record to
-# incrementally modify your database, and then regenerate this schema definition.
-#
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
-#
-# It's strongly recommended that you check this file into your version control system.
+ActiveRecord::Schema.define(version: 20160927204639) do
 
-ActiveRecord::Schema.define(version: 20160920194557) do
-
-  create_table "administradoras", force: :cascade do |t|
+  create_table "administradoras", force: :cascade do |t| 
     t.string   "nome"
     t.integer  "telefone"
     t.datetime "created_at", null: false
@@ -24,7 +11,7 @@ ActiveRecord::Schema.define(version: 20160920194557) do
     t.string   "modelos"
     t.string   "marcas"
     t.integer  "quantidade"
-    t.string   "localizacao"
+    t.string   "localizacao" 
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -45,11 +32,38 @@ ActiveRecord::Schema.define(version: 20160920194557) do
     t.string   "nome"
     t.integer  "conta"
     t.integer  "cidade_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "administradora_id"
+    t.integer  "centraldealarme_id"
+    t.integer  "contrato_id"
+    t.integer  "dvr_id"
+    t.integer  "internet_id"
+    t.integer  "hd_id"
+    t.integer  "teclado_id"
+    t.integer  "camera_id"
+    t.integer  "nobreak_id"
+    t.integer  "controlp_id"
+    t.integer  "sensore_id"
+    t.integer  "sindico_id"
+    t.string   "sindico"
+    t.integer  "telefone"
+    t.integer  "cnpj"
   end
 
+  add_index "clientes", ["administradora_id"], name: "index_clientes_on_administradora_id"
+  add_index "clientes", ["camera_id"], name: "index_clientes_on_camera_id"
+  add_index "clientes", ["centraldealarme_id"], name: "index_clientes_on_centraldealarme_id"
   add_index "clientes", ["cidade_id"], name: "index_clientes_on_cidade_id"
+  add_index "clientes", ["contrato_id"], name: "index_clientes_on_contrato_id"
+  add_index "clientes", ["controlp_id"], name: "index_clientes_on_controlp_id"
+  add_index "clientes", ["dvr_id"], name: "index_clientes_on_dvr_id"
+  add_index "clientes", ["hd_id"], name: "index_clientes_on_hd_id"
+  add_index "clientes", ["internet_id"], name: "index_clientes_on_internet_id"
+  add_index "clientes", ["nobreak_id"], name: "index_clientes_on_nobreak_id"
+  add_index "clientes", ["sensore_id"], name: "index_clientes_on_sensore_id"
+  add_index "clientes", ["sindico_id"], name: "index_clientes_on_sindico_id"
+  add_index "clientes", ["teclado_id"], name: "index_clientes_on_teclado_id"
 
   create_table "contratos", force: :cascade do |t|
     t.string   "tipo"
@@ -104,12 +118,20 @@ ActiveRecord::Schema.define(version: 20160920194557) do
     t.integer  "cnpj"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "nome"
+    t.integer  "cliente_id"
   end
+
+  add_index "internets", ["cliente_id"], name: "index_internets_on_cliente_id"
 
   create_table "nobreaks", force: :cascade do |t|
     t.integer  "capacidade"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "marca"
+    t.string   "modelo"
+    t.string   "bateria"
+    t.integer  "capacidadeBateria"
   end
 
   create_table "sensores", force: :cascade do |t|

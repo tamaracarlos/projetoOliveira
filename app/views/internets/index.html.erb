@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:banda) %></th>
       <th><%= model_class.human_attribute_name(:contrato) %></th>
       <th><%= model_class.human_attribute_name(:cnpj) %></th>
@@ -17,6 +18,7 @@
     <% @internets.each do |internet| %>
       <tr>
         <td><%= link_to internet.id, internet_path(internet) %></td>
+        <td><%= internet.nome %></td>
         <td><%= internet.banda %></td>
         <td><%= internet.contrato %></td>
         <td><%= internet.cnpj %></td>

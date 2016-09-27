@@ -8,8 +8,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem "therubyracer"
 gem "less-rails" 
 gem "twitter-bootstrap-rails"
-gem 'bootstrap_sb_admin_base_v2'
-
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
